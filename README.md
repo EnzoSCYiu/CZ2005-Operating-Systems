@@ -1,5 +1,3 @@
-# CZ2005-Operating-Systems
-A course taken during the exchange to NTU
 # EXPERIMENT 3 (VIRTUAL MEMORY)
 
 **1. OBJECTIVES** 
