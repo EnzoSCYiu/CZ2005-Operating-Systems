@@ -119,20 +119,19 @@ the least recently used entry (that is, the entry with the smallest last used fi
     miss (i.e., the requested page is not in the memory at all; it must be a page fault
     and must trigger page replacement). Fill as many rows as necessary until Nachos
     exits.
+    
+    The first three columns are the tick that the page fault exception occurred (tick),
+    the virtual page number (vpn) and the corresponding process id (pid). Each
+    process has its own set of virtual page numbers. The next four columns represent
+    each entry in the IPT. Each IPT entry has four values, the process id (pid),
+    virtual page number (vpn), last accessed tick (last used) and valid flag. The next
+    three columns represent each entry in the TLB. Each TLB entry shows the virtual
+    page number (vpn), physical frame number (phy), and the valid flag of the entry.
+    The last column records the dirty page that is paged out, if any. You should
+    record down the entries of the IPT and TLB before replacement, and highlight
+    the entry that is selected to be updated.
 
-
-The first three columns are the tick that the page fault exception occurred (tick),
-the virtual page number (vpn) and the corresponding process id (pid). Each
-process has its own set of virtual page numbers. The next four columns represent
-each entry in the IPT. Each IPT entry has four values, the process id (pid),
-virtual page number (vpn), last accessed tick (last used) and valid flag. The next
-three columns represent each entry in the TLB. Each TLB entry shows the virtual
-page number (vpn), physical frame number (phy), and the valid flag of the entry.
-The last column records the dirty page that is paged out, if any. You should
-record down the entries of the IPT and TLB before replacement, and highlight
-the entry that is selected to be updated.
-
-The first four rows of the table are shown below.
+    The first four rows of the table are shown below.
 
 
 | tick | pid | vpn | IPT[0] | IPT[1] | IPT[2] | IPT[3] | TLB[0] | TLB[1] | TLB[2] | Page Out |
