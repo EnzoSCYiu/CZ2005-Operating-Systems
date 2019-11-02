@@ -144,18 +144,15 @@ vpn,
 phy,
 valid
 ```
-## 10 0 0 0,0,0,0 0,0,0,0 0,0,0,0 0,0,0,0 0,0,0 0,0,0 0,0,
+| tick | pid | vpn | IPT[0] | IPT[1] | IPT[2] | IPT[3] | TLB[0] | TLB[1] | TLB[2] | Page Out |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
+|   |   |   | pid, vpn, last used, valid | | | | vpn, phy, valid| | | |
+| 10 | 0 | 0 | 0,0,0,0 | 0,0,0,0 | 0,0,0,0 | 0,0,0,0 | 0,0,0 | 0,0,0 | 0,0,0 | |
+| 13 | 9 | 0 | 0,0,12,1 | 0,0,0,0| 0,0,0,0| 0,0,0,0| 0,0,1| 0,0,0| 0,0,0| |
+| 15 | 26 | 0 | 0,0,12,1 | 0,9,15,1 | 0,0,0,0 | 0,0,0,0 | 0,0,1 | 9,1,1 | 0,0,0 | |
+| 20 | 1 | 0 | 0,0,12,1 | 0,9,19,1 | 0,26,17,1 | 0,0,0,0| 0,0,1| 9,1,1| 26,2,1| |
 
-## 13 9 0 0,0,12,1 0,0,0,0 0,0,0,0 0,0,0,0 0,0,1 0,0,0 0,0,
 
-## 15 26 0 0,0,12,1 0,9,15,1 0,0,0,0 0,0,0,0 0,0,1 9,1,1 0,0,
-
-## 20 1 0 0,0,12,1 0,9,19,1 0,26,17,1 0,0,0,0 0,0,1 9,1,1 26,2,
-| tick | pid | vpn | IPT[0]                     | IPT[1]  | IPT[2]     | IPT[3]  | TLB[0] | TLB[1] | TLB[2] | Page Out |
-| ---- |-----|-----|----------------------------|---------|----------|------------|------------|------------|
-|      |     |     | pid, vpn, last used, valid |         |            |         |||||
-| 10   | 0   | 0   | 0,0,0,0                    | 0,0,0,0 | 0,0,0,0    | 0,0,0,0 | 0,0,0 | 0,0,0 | 0,0,0 | |
-| 15 | are neat      |    $1 |
 
 6. Write down the page size, the number of physical frames, and the TLB size
     defined in Nachos as well as the number of pages used by the test program and
@@ -164,12 +161,11 @@ valid
     
 **9. Report**
 
-```
 It is recommended that your report should include analysis of the test program output.
 The analysis should clearly explain which TLB entry or physical frame should be used
 whenever there is a TLB miss or page fault. DO NOT attach the debugging printout
 from the program.
-```
+
 - Limit your report to 10 pages;
 - Include your implementation of code fragments of int VpnToPhyPage(int
     vpn), void InsertToTLB(int vpn, int phyPage),and int
