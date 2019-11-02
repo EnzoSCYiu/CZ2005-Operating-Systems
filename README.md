@@ -120,7 +120,7 @@ the least recently used entry (that is, the entry with the smallest last used fi
     and must trigger page replacement). Fill as many rows as necessary until Nachos
     exits.
 
-```
+
 The first three columns are the tick that the page fault exception occurred (tick),
 the virtual page number (vpn) and the corresponding process id (pid). Each
 process has its own set of virtual page numbers. The next four columns represent
@@ -131,17 +131,10 @@ page number (vpn), physical frame number (phy), and the valid flag of the entry.
 The last column records the dirty page that is paged out, if any. You should
 record down the entries of the IPT and TLB before replacement, and highlight
 the entry that is selected to be updated.
-```
-```
+
 The first four rows of the table are shown below.
-```
 
 
-```
-vpn,
-phy,
-valid
-```
 | tick | pid | vpn | IPT[0] | IPT[1] | IPT[2] | IPT[3] | TLB[0] | TLB[1] | TLB[2] | Page Out |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 |   |   |   | pid, vpn, last used, valid | | | | vpn, phy, valid| | | |
